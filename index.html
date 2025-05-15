@@ -39,7 +39,7 @@
       <h2>Status Page - Wibond</h2>
       <p>Iniciá sesión con tu cuenta corporativa</p>
       <a
-        href="https://us-east-2irsusw7ld.auth.us-east-2.amazoncognito.com/login?client_id=6vn8g1jf6o3ir970ku0kn57okv&response_type=code&scope=email+openid&redirect_uri=http://localhost:3000"
+        href="https://us-east-2irsusw7ld.auth.us-east-2.amazoncognito.com/login?client_id=6vn8g1jf6o3ir970ku0kn57okv&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Flocalhost%3A3000"
       >
         <button>Iniciar sesión con Cognito</button>
       </a>
@@ -50,8 +50,9 @@
       <p>Ya estás autenticado con Cognito.</p>
       <button onclick="logout()">Cerrar sesión</button>
     </div>
+    <script src="js/auth.js"></script>
 
-    <script>
+    <!-- <script>
       const urlParams = new URLSearchParams(window.location.search);
       const code = urlParams.get("code");
 
@@ -93,6 +94,6 @@
         localStorage.clear();
         window.location.href = "/";
       }
-    </script>
+    </script> -->
   </body>
 </html>

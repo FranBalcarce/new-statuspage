@@ -203,6 +203,59 @@
         }</strong></p>`;
         contenedorUptime.appendChild(div);
       });
+
+      // ───── FETCH DE ESTADO DE SERVICIOS (reemplaza el array "servicios") ─────
+
+// fetch("https://api.wibond.com/status/servicios", {
+//   headers: {
+//     Authorization: "Bearer " + localStorage.getItem("access_token") // si te dan token con Cognito
+//   }
+// })
+//   .then(res => res.json())
+//   .then(servicios => {
+//     const contenedorEstado = document.getElementById("estado-servicios");
+//     servicios.forEach(s => {
+//       const div = document.createElement("div");
+//       div.className = "servicio";
+//       div.innerHTML = `<h3>${s.nombre}</h3><p class="estado ${colores[s.estado]}">${s.estado}</p>`;
+//       contenedorEstado.appendChild(div);
+//     });
+//   })
+//   .catch(error => console.error("Error al cargar servicios:", error));
+
+
+// ───── FETCH DE DATOS DE UPTIME Y BARRAS (reemplaza el array "uptimeServicios") ─────
+
+// fetch("https://api.wibond.com/status/uptime", {
+//   headers: {
+//     Authorization: "Bearer " + localStorage.getItem("access_token")
+//   }
+// })
+//   .then(res => res.json())
+//   .then(data => {
+//     const contenedorUptime = document.getElementById("uptime-servicios");
+//     data.servicios.forEach(s => {
+//       const div = document.createElement("div");
+//       div.className = "servicio";
+//       div.innerHTML = `
+//         <h3>${s.nombre}</h3>
+//         <div class="health-bar">
+//           ${s.historial.map(color => `<div class="bar ${color}"></div>`).join('')}
+//         </div>
+//         <p class="uptime-label">${s.uptime} uptime - <strong>${s.estadoActual}</strong></p>
+//       `;
+//       contenedorUptime.appendChild(div);
+//     });
+//   })
+//   .catch(error => console.error("Error al cargar uptime:", error));
+
     </script>
   </body>
 </html>
+
+<!-- 📝 ¿Qué tenés que hacer cuando te pasen las credenciales?
+✅ Descomentás el bloque 
+
+✅ Reemplazás la URL de fetch(...) con la API real
+
+✅ Asegurate de tener el access_token si es necesario -->
